@@ -7,13 +7,14 @@ const { Title } = Typography
 
 const App = () => (
   <div className="App">
-    <Title>Portfolios - Satyo Wicaksana</Title>
     <Row>
-      <Col span={12}>
-        <Portfolios></Portfolios>
+      <Col xs={24} sm={24} md={24} lg={12} xl={12} style={{textAlign: 'center'}}>
+        <Title>Portfolios</Title>
+        <h3>Satyo Wicaksana</h3>
+        <img style={{ width: '90%'}} src={require('./assets/illustration.jpg')} alt="illustrartion"/>
       </Col>
-      <Col span={12}>
-        a
+      <Col xs={24} sm={24} md={24} lg={12} xl={12}>
+        <Portfolios></Portfolios>
       </Col>
     </Row>
   </div>

@@ -14,7 +14,7 @@ const data = [
         <li>Mongoose</li>
       </ul>
     ),
-    link: 'http://spotlight.satyowicaksana.com'
+    link: 'http://checkit.satyowicaksana.com'
   },
   {
     name: 'spotlight',
@@ -28,7 +28,7 @@ const data = [
         <li>Mongoose</li>
       </ul>
     ),
-    link: 'http://checkit.satyowicaksana.com'
+    link: 'http://spotlight.satyowicaksana.com'
   },
   {
     name: 'omniverse',
@@ -113,14 +113,22 @@ const Portfolios = () => (
   <List
     itemLayout="vertical"
     dataSource={data}
+    pagination={{
+      onChange: page => {
+        console.log(page);
+      },
+      pageSize: 3,
+    }}
     renderItem={item => (
       <List.Item
         extra={
-          <img
-            width={400}
-            alt="logo"
-            src={require(`./assets/${item.name}-thumbnail.png`)}
-          />
+          <a href={item.link}>
+            <img
+              width={400}
+              alt="logo"
+              src={require(`./assets/${item.name}-thumbnail.png`)}
+            />
+          </a>
         }
       >
         <List.Item.Meta
