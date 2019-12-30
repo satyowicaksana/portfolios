@@ -1,11 +1,12 @@
 import React from 'react';
-import { List, Avatar, Icon } from 'antd';
+import { List, Avatar } from 'antd';
+import './Portfolios.css'
 
 const data = [
   {
     name: 'checkit',
     title: 'Check.it',
-    description: 'Todo list web',
+    description: 'Todo List web',
     content: (
       <ul>
         <li>jQuery</li>
@@ -19,7 +20,7 @@ const data = [
   {
     name: 'spotlight',
     title: 'Spotlight',
-    description: 'Article posting web',
+    description: 'Article Posting web',
     content: (
       <ul>
         <li>Vue.js</li>
@@ -75,7 +76,7 @@ const data = [
   {
     name: 'shield',
     title: 'S.H.I.E.L.D. Database',
-    description: 'Superhero list (react exercise) web',
+    description: 'Superhero List (react exercise) web',
     content: (
       <ul>
         <li>React.js</li>
@@ -102,13 +103,6 @@ const data = [
   },
 ];
 
-const IconText = ({ type, text }) => (
-  <span>
-    <Icon type={type} style={{ marginRight: 8 }} />
-    {text}
-  </span>
-);
-
 const Portfolios = () => (
   <List
     itemLayout="vertical"
@@ -121,10 +115,11 @@ const Portfolios = () => (
     }}
     renderItem={item => (
       <List.Item
+        style={{padding: '5%'}}
         extra={
           <a href={item.link}>
             <img
-              width={400}
+              className="porto-image"
               alt="logo"
               src={require(`./assets/${item.name}-thumbnail.png`)}
             />
