@@ -3,14 +3,32 @@ import { List, Avatar, Icon } from 'antd';
 
 const data = [
   {
+    name: 'checkit',
     title: 'Check.it',
     description: 'Todo list web',
     content: (
       <ul>
         <li>jQuery</li>
         <li>Materialize</li>
+        <li>Express</li>
+        <li>Mongoose</li>
       </ul>
-    )
+    ),
+    link: 'http://spotlight.satyowicaksana.com'
+  },
+  {
+    name: 'spotlight',
+    title: 'Spotlight',
+    description: 'Article posting web',
+    content: (
+      <ul>
+        <li>Vue.js</li>
+        <li>Buefy</li>
+        <li>Express</li>
+        <li>Mongoose</li>
+      </ul>
+    ),
+    link: 'http://checkit.satyowicaksana.com'
   }
 ];
 
@@ -29,15 +47,15 @@ const Portfolios = () => (
       <List.Item
         extra={
           <img
-            width={272}
+            width={400}
             alt="logo"
-            src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+            src={require(`./assets/${item.name}-thumbnail.png`)}
           />
         }
       >
         <List.Item.Meta
-          avatar={<Avatar src={require('./assets/checkit-logo.png')} />}
-          title={<a href="https://ant.design">{item.title}</a>}
+          avatar={<Avatar src={require(`./assets/${item.name}-logo.png`)} />}
+          title={<a href={item.link}>{item.title}</a>}
           description={item.description}
         />
         {item.content}
